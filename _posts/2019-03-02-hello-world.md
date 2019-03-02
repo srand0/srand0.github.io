@@ -16,10 +16,55 @@ background:  /image/post1.jpg
 
 ### 1.安装环境
 
-环境的安装
+环境的安装主要参照Jekyllrb的[官方教程](https://jekyllrb.com/docs/installation/)，Jekyll是基于Ruby语言的，所以需要安装Ruby的dev安装包。
+不同的系统环境安装方式不同，所以不一一说明，我在安装的时候主要问题在于Windows下的完整Ruby-dev安装包可能需要翻墙下载。
 
 ### 2.搭建博客
 
+在安装完Ruby环境后，可以按照官方给出的[教程](https://jekyllrb.com/docs/)搭建最基础的博客，搭建的过程非常简单，只需要四个命令：
+
+
+{% highlight ruby %}
+#Install Jekyll and bundler gems
+gem install jekyll bundler
+
+#Create a new Jekyll site at ./myblog
+jekyll new myblog
+
+#Change into your new directory
+cd myblog
+
+#Build the site and make it available on a local server
+bundle exec jekyll serve
+{% endhighlight %}
+
+执行完成后，下一步就是启动服务，服务默认使用的是4000端口，如果4000端口被占用，可以使用其他端口，只需要在_config.yml文件中添加配置：
+{% highlight ruby %}
+port:  8089
+{% endhighlight %}
+然后打开浏览器:localhost:8089即可看到搭建好的博客。
+
 ### 3.使用主题
+上面搭建完成的博客只是Jekyll博客系统默认的主题，如果需要使用不同的主题美化博客，需要按照[官方教程](https://jekyllrb.com/docs/themes/)操作。
+首先到[官方推荐网站](https://rubygems.org/search?utf8=%E2%9C%93&query=jekyll-theme)找到基于gem的主题，一般是名称类似jekyll-theme-xxx的主题。
+安装主题分为四个步骤：
+
+1) 编辑Gemfile，修改主题名称，默认主题名称为minima，修改为新主题名称xxx
+> gem "minima", "~> 2.0"&emsp;&emsp;=>&emsp;&emsp;gem "xxx"
+
+1) 安装，运行命令
+> bundle install
+
+3) 添加_config.yml配置，将以下内容添加到_config.yml文件中，xxx为主题名称
+> theme: xxx
+
+4) 编译页面
+> bundle exec jekyll serve
+
+最后需要根据新的主题，配置相关的页面。
 
 ### 4.使用中文
+官网中的主题一般默认只支持英文，如果要添加中文支持，需要在_config.yml文件中设置文件编码，添加以下配置：
+> encoding: utf-8
+
+### 5.部署博客
