@@ -50,7 +50,7 @@ port:  8089
 安装主题分为四个步骤：
 
 1) 编辑Gemfile，修改主题名称，默认主题名称为minima，修改为新主题名称xxx
-> gem "minima", "~> 2.0"&emsp;&emsp;=>&emsp;&emsp;gem "xxx"
+> gem "minima", "~> 2.0"&emsp;&emsp;==>&emsp;&emsp;gem "xxx"
 
 1) 安装，运行命令
 > bundle install
@@ -68,3 +68,15 @@ port:  8089
 > encoding: utf-8
 
 ### 5.部署博客
+使用了主题之后，部署的时候会有文件引用的问题，因为在本地试运行的时候，ruby会链接ruby安装根目录下的主题项目文件一起编译，
+如果只提交项目中的文件会导致在github中无法编译，有两种方法可以解决这个问题：
+
+第一种：将_config.yml中的theme参数修改为远程仓库的地址
+> theme: xxx&emsp;&emsp;==>&emsp;&emsp;remote_theme: ref
+
+ref即该主题github项目的ref，具体可以到主题项目查看。
+
+第二种：将所有用到的文件拷贝到项目中一起提交，先找到主题项目目录：
+> ruby根目录/lib/ruby/gems 2.5.0/gems/主题名称
+
+然后将该目录下的所有文件，包括_includes、_layouts、_sass、assets等文件一起拷贝到项目中，然后一起提交即可。
