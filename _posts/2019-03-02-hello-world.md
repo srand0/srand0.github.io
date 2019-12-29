@@ -1,11 +1,17 @@
 ---
-layout: post
+layout: article
 title:  'Hello World!'
-subtitle:  '搭建Jekyll博客过程.'
-date:    '2019-03-02 22:10:28'
-background:  /image/post1.jpg
+tags: Jekyll
+aside:
+  toc: true
+cover: /image/posts/2019-03-02/jekyll.png
 ---
+
 研究了一天，终于搞定了Jekyll博客的搭建，Jekyll可以将markdown内容生成静态页面，再加上Github的支持，可以免费部署一个简单的博客服务。
+
+<!--more-->
+
+---
 
 搭建的过程大致分为四个步骤：
 - 安装环境
@@ -80,3 +86,5 @@ ref即该主题github项目的ref，具体可以到主题项目查看。
 > ruby根目录/lib/ruby/gems 2.5.0/gems/主题名称
 
 然后将该目录下的所有文件，包括_includes、_layouts、_sass、assets等文件一起拷贝到项目中，然后一起提交即可。
+
+---

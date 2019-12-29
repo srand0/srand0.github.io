@@ -1,11 +1,19 @@
 ---
-layout: post
+layout: article
 title:  'Respberry Pi 3B!'
+tags: 制作
 subtitle:  '树莓派的安装和配置'
-date:    '2019-03-03 18:35:00'
-background:  /image/post2.jpg
+#date:    '2019-03-03 18:35:00'
+#background:  /image/post2.jpg
+aside:
+  toc: true
+cover: /image/posts/2019-03-03/respberrypi.png
 ---
 ![respberry](/image/posts/2019-03-03/respberrypi.png)
+
+## 树莓派的安装和配置
+
+<!--more-->
 
 按照我的想法，我是想用Arduino+RespberryPi完成机器人的制作，Arduino主控运动控制，RespberryPi作为大脑。Respberry其实就是一个低配版的笔记本，使用它我可以最大化地运用各种软件资源去做更多的事情，而不用受限于嵌入式系统。
 
