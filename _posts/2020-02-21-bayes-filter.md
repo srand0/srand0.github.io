@@ -113,10 +113,10 @@ __BayesFilterContinuous(__ $bel(x_{t-1})$, $u_t$, $z_t$ __):__ <br/>
 离散形式为：
 
 __BayesFilterDiscrete(__ $\{p_{k,t-1}\}$, $u_t$, $z_t$ __):__<br/>
-&emsp; *for all $k$ do:*<br/>
-&emsp;&emsp;  $\overline{p}_{k,t} = \sum_i p(X_t=x_k | u_t, X_{t-1} = x_i)p_{i,t−1}$<br/>
-&emsp;&emsp;  $p_{k,t} = \eta p(z_t|X_t=x_k) \overline{p}_{k,t}$<br/>
-&emsp; *endfor*<br/>
+&emsp; *for all $k$ do:* <br/>
+&emsp;&emsp;  $$ \overline{p}_{k,t} = \sum_i p(X_t=x_k|u_t, X_{t-1}=x_i)p_{i,t−1} $$ <br/>
+&emsp;&emsp;  $$ p_{k,t} = \eta p(z_t|X_t=x_k) \overline{p}_{k,t} $$ <br/>
+&emsp; *endfor* <br/>
 &emsp; *return* \{$p_{k,t}$\}<br/>
 
 
